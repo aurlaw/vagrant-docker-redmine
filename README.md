@@ -20,6 +20,7 @@ $ vagrant up
 http://192.168.20.100:10083/
 
 username: admin
+
 password: admin
 
 ## Shipyard ##
@@ -38,6 +39,8 @@ $ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock shipyard/deploy s
 ```
 
 http://192.168.20.100:8080/
+
 username: admin
+
 password: shipyard
 
