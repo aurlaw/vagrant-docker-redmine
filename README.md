@@ -17,16 +17,20 @@ $ vagrant up
 
 ## Redmine ##
 
-http://192.168.20.100:10083/
+Point your browser to `http://localhost:10083` and login using the default username and password:
 
-username: admin
+* username: **admin**
+* password: **admin**
 
-password: admin
+Make sure you visit the `Administration` link and `Load the default configuration` before creating any projects.
+
 
 ## Shipyard ##
 
 Under /etc/default/docker
-Use 'DOCKER_OPTS="-H tcp://0.0.0.0:4500 -H unix:///var/run/docker.sock"' 
+```
+'DOCKER_OPTS="-H tcp://0.0.0.0:4500 -H unix:///var/run/docker.sock"' 
+```
 
 Restart Vagrant
 ```
@@ -38,9 +42,8 @@ Install Shipyard
 $ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock shipyard/deploy start
 ```
 
-http://192.168.20.100:8080/
+`http://192.168.20.100:8080/`
 
-username: admin
-
-password: shipyard
+* username: **admin**
+* password: **shipyard**
 
