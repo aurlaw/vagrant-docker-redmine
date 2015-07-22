@@ -8,12 +8,15 @@ Vagrant.configure(2) do |config|
 
 
   config.vm.hostname = "docker-remind"
-
+  # config.vm.synced_folder "redmine", "/srv/docker/redmine"
+  
   config.vm.provision :docker
   config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: false, run: "always"
 
 
   config.vm.provider "virtualbox" do |v|
+    v.name = "Redmine_vm"
+
     v.memory = 2048
     v.cpus = 2
   end

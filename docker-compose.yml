@@ -6,6 +6,8 @@ postgresql:
     - DB_NAME=redmine_production
   volumes:
     - /srv/docker/redmine/postgresql:/var/lib/postgresql
+    - /vagrant/redmine/backup:/shared
+    - /srv/docker/redmine/backup:/shareddb
 redmine:
   image: sameersbn/redmine:3.0.4
   links:
@@ -26,10 +28,10 @@ redmine:
   volumes:
     - /srv/docker/redmine/redmine:/home/redmine/data
     - /srv/docker/redmine/lib:/home/redmine/redmine/lib
-redis:
-  image: redis
-  command: redis-server --appendonly yes
-  ports:
-    - "6379:6379"
-  volumes:
-    - /srv/docker/redis:/data
+# redis:
+#   image: redis
+#   command: redis-server --appendonly yes
+#   ports:
+#     - "6379:6379"
+#   volumes:
+#     - /srv/docker/redis:/data

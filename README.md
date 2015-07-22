@@ -47,3 +47,9 @@ $ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock shipyard/deploy s
 * username: **admin**
 * password: **shipyard**
 
+
+
+Cron
+*/5 * * * *  bash -x docker_db_backup.sh
+
+ sudo tail /var/log/syslog
