@@ -28,6 +28,12 @@ redmine:
   volumes:
     - /srv/docker/redmine/redmine:/home/redmine/data
     - /srv/docker/redmine/lib:/home/redmine/redmine/lib
+pgstudio:
+  image: lukasmartinelli/pgstudio
+  links:
+    - postgresql:postgresql
+  ports:
+    - "8181:8080"
 # redis:
 #   image: redis
 #   command: redis-server --appendonly yes
